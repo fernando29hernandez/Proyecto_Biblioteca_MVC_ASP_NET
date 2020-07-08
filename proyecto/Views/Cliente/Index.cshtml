@@ -1,0 +1,41 @@
+﻿@model List<proyecto.Models.ViewModels.ListClienteViewModel>
+@{
+    ViewBag.Title = "Listado de Clientes";
+}
+
+<h2>Listado de Clientes</h2>
+<div class="row" style="text-align:right;padding:5px;">
+    <a href="~/Cliente/Nuevo" class="btn btn-primary">Registrar Cliente</a>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Telefono Celular</th>
+                <th>NIT</th>
+                <th>DPI</th>
+                <th>Acciones</th>
+            </tr>
+
+            @foreach (var elemento in Model)
+            {
+        <tr>
+            <td>@elemento.id_cliente</td>
+            <td>@elemento.nombre</td>
+            <td>@elemento.celular</td>
+            <td>@elemento.nit</td>
+            <td>@elemento.dpi</td>
+
+            <td>
+                <a class="btn btn-warning" href="~/Cliente/Editar/@elemento.id_cliente">Editar</a>
+                <a class="btn btn-danger" href="~/Cliente/Eliminar/@elemento.id_cliente">Eliminar</a>
+            </td>
+        </tr>
+            }
+        </table>
+    </div>
+
+
+</div>

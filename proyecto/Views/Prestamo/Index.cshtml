@@ -1,0 +1,61 @@
+﻿@model IEnumerable<proyecto.Models.Prestamo>
+
+@{
+    ViewBag.Title = "Listado de Prestamos";
+}
+
+<h2>Control de Prestamos</h2>
+
+<p>
+    <div class="row" style="text-align:right;padding:5px;">
+        <a href="~/Prestamo/Create" class="btn btn-primary"> Registrar Prestamo Nuevo</a>
+    </div>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Titulo del Libro
+        </th>
+        <th>
+            Datos Cliente
+        </th>
+
+        <th>
+            Fecha Inicio Prestamo
+        </th>
+        <th>
+            Fecha Final Prestamo
+        </th>
+        <th> Acciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Libro.titulo)
+    </td>
+    <td>
+        Nombre:@Html.DisplayFor(modelItem => item.Cliente.nombre)
+        <br/>
+        Celular:@Html.DisplayFor(modelItem => item.Cliente.celular)
+        <br />
+        DPI:@Html.DisplayFor(modelItem => item.Cliente.dpi)
+        <br />
+        NIT:@Html.DisplayFor(modelItem => item.Cliente.nit)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.inicio)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.final)
+    </td>
+
+    <td>
+        <a class="btn btn-warning" href="~/Prestamo/Edit/@item.id_prestamo">Editar</a>
+        <a class="btn btn-success" href="~/Prestamo/Details/@item.id_prestamo">Informacion</a>
+        <a class="btn btn-danger" href="~/Prestamo/Delete/@item.id_prestamo">Eliminar</a>
+    </td>
+</tr>
+}
+
+</table>

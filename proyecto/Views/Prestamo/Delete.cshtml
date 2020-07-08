@@ -1,0 +1,56 @@
+﻿@model proyecto.Models.Prestamo
+
+@{
+    ViewBag.Title = "Eliminar Prestacion";
+}
+
+<h2>Eliminar prestamo</h2>
+
+<h3>¿Estas Seguro que quieres eliminar el prestamo?</h3>
+<div>
+    <h4>Prestamo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.final)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.final)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Libro.titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Libro.titulo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar Prestamo" class="btn btn-danger" /> |
+            @Html.ActionLink("Regresar al Control de Prestamos", "Index")
+        </div>
+    }
+</div>

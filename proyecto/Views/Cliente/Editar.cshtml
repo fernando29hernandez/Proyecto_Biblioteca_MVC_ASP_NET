@@ -1,0 +1,35 @@
+﻿@model  proyecto.Models.ViewModels.ClienteViewModel
+@{
+    ViewBag.Title = "Editar Cliente";
+}
+
+<h2>Editar Cliente</h2>
+
+@using (Html.BeginForm("Editar", "Cliente", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.HiddenFor(d => d.id_cliente);
+            <div>
+                @Html.LabelFor(d => d.nombre)
+                @Html.TextBoxFor(d => d.nombre, "", new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.celular)
+                @Html.TextBoxFor(d => d.celular, "", new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.nit)
+                @Html.TextBoxFor(d => d.nit, "", new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.dpi)
+                @Html.TextBoxFor(d => d.dpi, "", new { @class = "form-control" })
+            </div>
+        </div>
+        <br>
+        <div style="text-align:right;">
+            <input type="submit" value="Editar Cambios" class="btn btn-primary" />
+        </div>
+    </div>
+}

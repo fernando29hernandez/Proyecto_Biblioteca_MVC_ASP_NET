@@ -1,0 +1,50 @@
+﻿@model proyecto.Models.Prestamo
+
+@{
+    ViewBag.Title = "Informacion Prestamo";
+}
+
+<h2>Informacion sobre el Prestamo</h2>
+
+<div>
+    <h4>Prestamo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.final)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.final)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Libro.titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Libro.titulo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar Prestamo", "Edit", new { id = Model.id_prestamo }) |
+    @Html.ActionLink("Regresar al control de prestamos", "Index")
+</p>

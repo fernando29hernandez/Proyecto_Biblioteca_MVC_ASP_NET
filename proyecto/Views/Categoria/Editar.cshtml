@@ -1,0 +1,24 @@
+﻿
+
+@model  proyecto.Models.ViewModels.CategoriaViewModel
+@{
+    ViewBag.Title = "Editar Categoria";
+}
+
+<h2>Editar Categoria</h2>
+
+
+@using (Html.BeginForm("Editar", "Categoria", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.HiddenFor(d => d.id_categoria);
+            @Html.LabelFor(d => d.categoria)
+            @Html.TextBoxFor(d => d.categoria, "", new { @class = "form-control" })
+        </div>
+        <br>
+        <div style="text-align:right;">
+            <input type="submit" value="Editar Cambios" class="btn btn-primary" />
+        </div>
+    </div>
+}
